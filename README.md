@@ -9,14 +9,16 @@ Paper: <url>https://arxiv.org/pdf/2008.08173.pdf</url>
 ### Data Preprocessing:
 First generate sudo label for self-supervised embedding training:
 <pre>
-bash ./tracking/main.sh \
+bash ./tracking/main.sh
 python ./embedding/dataset/nuscenes_preprocessing.py
 </pre>
 ### Self-supervised embedding training:
 <pre>
-bash ./embedding/main.sh \
+bash ./embedding/main.sh
 </pre>
 ### Combining appearance embedding with motion priors for MOT:
-python ./combination/generate_data.py \
-python ./combination/logistic_regression.py \
+<pre>
+python ./combination/generate_data.py
+python ./combination/logistic_regression.py
 bash ./tracking/main.sh
+</pre>
