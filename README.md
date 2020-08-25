@@ -3,7 +3,7 @@
 ![](images/us3da.jpg)
 
 This is the official repo of "Uncertainty-aware Self-supervised 3D Data Association", IROS 2020 <br/> \
-Project page: <url>https://jianrenw.github.io/Self-Supervised-3D-Data-Association/</url>
+Project page: <url>https://jianrenw.github.io/Self-Supervised-3D-Data-Association/</url> \
 Paper: <url>https://arxiv.org/pdf/2008.08173.pdf</url>
 
 ### Data Preprocessing:
