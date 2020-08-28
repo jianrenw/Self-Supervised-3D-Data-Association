@@ -213,3 +213,23 @@ class TripletTrainer(Trainer):
 
         print_str += COLORS.ENDC
         pbar.write(print_str)
+
+    def save_model(self, ep):
+        # Save the optimizer's state_dict
+        torch.save(self.optimizer.state_dict(),
+                   osp.join(self.model_save_dir, "optimizer-%03d.ckpt" % ep))
+
+        # Save the networks' state_dict
+        torch.save(self.predictor.state_dict(),
+                   osp.join(self.model_save_dir, "predictor-%03d.ckpt" % ep))
+
+    def resume(self, ep):
+        # Load the optimizer's state_dict
+        self.optimizer.load_state_dict(
+            torch.load(
+                osp.join(self.model_save_dir, "optimizer-%03d.ckpt" % ep)))
+
+        # Load the networks' state_dict
+        self.predictor.load_state_dict(
+            torch.load(
+                osp.join(self.model_save_dir, "predictor-%03d.ckpt" % ep)))
