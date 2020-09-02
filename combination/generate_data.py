@@ -64,7 +64,7 @@ name_token = {}
 for scene in nusc.scene:
     name_token[scene['name']] = scene['token']
 eval_tokens = []
-for val_scene in scene_names[90:]:
+for val_scene in scene_names[90:120]:
     eval_tokens.append(name_token[val_scene])
 
 eval_instances = []
