@@ -22,3 +22,27 @@ python ./combination/generate_data.py
 python ./combination/logistic_regression.py
 bash ./tracking/main.sh
 </pre>
+
+## Acknowlegement
+This project is not possible without multiple great opensourced codebases. We list some notable examples below.  
+
+* [AB3DMOT](https://github.com/xinshuoweng/AB3DMOT)
+* [pointnet](https://github.com/charlesq34/pointnet)
+
+**SS3DA is deeply influenced by the following projects. Please consider citing the relevant papers.**
+
+```
+@article{Weng2020_AB3DMOT, 
+    author = {Weng, Xinshuo and Wang, Jianren and Held, David and Kitani, Kris}, 
+    journal = {IROS}, 
+    title = {{3D Multi-Object Tracking: A Baseline and New Evaluation Metrics}}, 
+    year = {2020} 
+}
+
+@inproceedings{jianren20s3da,
+    Author = {Wang, Jianren and Ancha, Siddharth and Chen, Yi-Ting and Held, David},
+    Title = {Self-supervised 3D Data Association},
+    Booktitle = {IROS},
+    Year = {2020}
+}
+```
