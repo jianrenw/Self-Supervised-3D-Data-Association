@@ -17,12 +17,8 @@ from nuscenes.eval.detection.data_classes import DetectionBox
 from nuscenes.utils.data_classes import LidarPointCloud
 from pyquaternion import Quaternion
 from tqdm import tqdm
-import sys
-sys.path.append('/home/jianrenw/research/3dmot/model')
-from pointnet import PointNetfeat, regression_mda, regression_md
-import sys
-sys.path.append('/home/jianrenw/research/3dsot/utils')
-from our_utils import points_in_bbox3D
+from model.pointnet import PointNetfeat, regression_mda, regression_md
+from utils import points_in_bbox3D
 from nuscenes_utils import tsrcs_to_bbox3D
 import torch
 import torch.nn.functional as F
