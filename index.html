@@ -178,15 +178,21 @@
 
       <div style="width:800px; margin:0 auto; text-align=center">
         3D object trackers usually require training on large amounts of annotated data that is expensive and time-consuming to collect. Instead, we propose leveraging vast unlabeled datasets by self-supervised metric learning of 3D object trackers, with a focus on data association. Large scale annotations for unlabeled data are cheaply obtained by automatic object detection and association across frames. We show how these self-supervised annotations can be used in a principled manner to learn point-cloud embeddings that are effective for 3D tracking. We estimate and incorporate uncertainty in self-supervised tracking to learn more robust embeddings, without needing any labeled data. We design embeddings to differentiate objects across frames, and learn them using uncertainty-aware self-supervised training. Finally, we demonstrate their ability to perform accurate data association across frames, towards effective and accurate 3D tracking.
+      </div>
+      <br><hr>
+      
+      <center><h1>Overview of the Algorithm</h1></center>
+      <div style="width:800px; margin:0 auto; text-align=center">
+        Left: Triplet example during self-supervised training. For any anchor detection in frame t, we select the hardest negative example from the same frame whose embedding produces the largest cosine similarity with the anchor detection. A positive example is picked from a detection in another frame that is associated with the same track as the anchor detection. A confidence of association is estimated and used to weight this example during self-supervised training. We train the embedding network to maximize the agreement between associated pairs. Right: At test time, self-supervised embeddings are extracted from each candidate detection in a frame. We use cosine similarity of embeddings extracted from each pair of objects to represent their appearance similarity, which is further used to perform accurate data association across frames.
       </div><br/>
-      <table align=center width=850px>
+      <table align=center width=650px>
         <p style="margin-top:4px;"></p>
-        <tr><td width=700px>
-          <center><a href="./resources/us3da.jpg"><img src = "./resources/us3da.jpg" width=700px></img></a><br></center>
+        <tr><td width=500px>
+          <center><a href="./resources/pipeline.jpg"><img src = "./resources/pipeline.jpg" width=700px></img></a><br></center>
         </td></tr>
       </table>
-      <br><hr>
-
+      <br/><hr>
+      
       <table align=center width=850px>
         <center><h1>Paper and Bibtex</h1></center>
         <tr>
@@ -212,14 +218,13 @@
         </td>
         <td width=550px align=left>
           <div class="paper" id="alignnet_bib">
-          <pre xml:space="preserve">
-          @inproceedings{jianren20s3da,
-              Author = {Wang, Jianren and Ancha, Siddharth
-                      and Chen, Yi-Ting and Held, David},
-              Title = {Uncertainty-aware Self-supervised 3D Data Association},
-              Booktitle = {IROS},
-              Year = {2020}
-          }</pre>
+<pre xml:space="preserve">
+@inproceedings{jianren20s3da,
+    Author = {Wang, Jianren and Ancha, Siddharth and Chen, Yi-Ting and Held, David},
+    Title = {Uncertainty-aware Self-supervised 3D Data Association},
+    Booktitle = {IROS},
+    Year = {2020}
+}</pre>
           </div>
           </td>
           </tr>
