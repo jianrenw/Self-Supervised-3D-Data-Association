@@ -1,6 +1,7 @@
 # We implemented our method on top of AB3DMOT's KITTI tracking open-source code
 
 from __future__ import print_function
+import sys
 import os.path, copy, numpy as np, time, sys
 from numba import jit
 from sklearn.utils.linear_assignment_ import linear_assignment
@@ -17,7 +18,9 @@ from nuscenes.eval.detection.data_classes import DetectionBox
 from nuscenes.utils.data_classes import LidarPointCloud
 from pyquaternion import Quaternion
 from tqdm import tqdm
-from model.pointnet import PointNetfeat, regression_mda, regression_md
+sys.path.append('../embedding/model')
+from pointnet import PointNetfeat, regression_mda, regression_md
+sys.path.append('../embedding/utils')
 from utils import points_in_bbox3D
 from nuscenes_utils import tsrcs_to_bbox3D
 import torch
@@ -1230,7 +1233,7 @@ if __name__ == '__main__':
     match_algorithm = sys.argv[5]
     use_angular_velocity = sys.argv[6] == 'True' or sys.argv[6] == 'true'
     dataset = sys.argv[7]
-    save_root = os.path.join('/home/jianrenw/research/3dsot' + sys.argv[8])
+    save_root = sys.argv[8]
     confidence_mode = sys.argv[9]
     use_gt = sys.argv[10] == 'True' or sys.argv[10] == 'true'
     use_mda = sys.argv[11] == 'True' or sys.argv[11] == 'true'

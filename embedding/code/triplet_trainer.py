@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 from trainer import Trainer
 import random
-from dataset.nuscenes import NUSCENES
+from dataset.nuscenes_data import NUSCENES
 from model.pointnet import PointNetfeat
 from model.losses import TripletLoss
 from utils.utils import get_dataloader, COLORS

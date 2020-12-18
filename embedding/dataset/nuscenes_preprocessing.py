@@ -31,6 +31,7 @@ with open(
     results = data['results']
 
 # tracks threshold
+# For metrics details, please run nuscenes evaluation code first
 with open(osp.join(args.result_path, args.split, 'metrics_details.json')) as f:
     data = json.load(f)
 thresholds = {}
